@@ -16,6 +16,10 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', function () {
+    // phpinfo();
+    // exit();
+    session(['今日はいい天気' => 'あいうえお']);
+    session(['abcdefghijk' => 98765432]);
     return view('index');
 });
 

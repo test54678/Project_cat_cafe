@@ -30,23 +30,29 @@
         @csrf
         <div class="mb-4">
           <label for="name" class="block text-left p-1 my-1 font-medium">お名前<span class="text-white text-xs bg-yellow-400 mx-2 py-1 px-2">必須</span></label>
-          <input id="name" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）田中太郎" name="name">
+          <!-- <input id="name" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）田中太郎" name="name"> -->
+          <input id="name" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）田中太郎" name="name" value="田中太郎">
         </div>
         <div class="mb-4">
           <label for=name_kana class="block text-left p-1 my-1 font-medium">お名前（フリガナ）<span class="text-white text-xs bg-yellow-400 mx-2 py-1 px-2">必須</span></label>
-          <input id="name_kana" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）タナカタロウ" name="name_kana">
+          <!-- <input id="name_kana" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）タナカタロウ" name="name_kana"> -->
+          <input id="name_kana" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）タナカタロウ" name="name_kana" value="タナカタロウ">
         </div>
         <div class="mb-4">
           <label for="phone" class="block text-left p-1 my-1 font-medium">電話番号</label>
-          <input id="phone" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）0312345678" name="phone">
+          <!-- <input id="phone" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）0312345678" name="phone"> -->
+          <input id="phone" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="例）0312345678" name="phone" value="0312345678">
         </div>
         <div class="mb-4">
           <label for="email" class="block text-left p-1 my-1 font-medium">メールアドレス<span class="text-white text-xs bg-yellow-400 mx-2 py-1 px-2">必須</span></label>
-          <input id="email" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="email" placeholder="info@example.com" name="email">
+          <!-- <input id="email" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="email" placeholder="info@example.com" name="email"> -->
+          <input id="email" class="w-full p-4 text-xs leading-none bg-blueGray-50 rounded outline-none border" type="email" placeholder="info@example.com" name="email" value="info@example.com">
+
         </div>
         <div class="mb-4">
           <label for="body" class="block text-left p-1 my-1 font-medium">お問い合わせ内容<span class="text-white text-xs bg-yellow-400 mx-2 py-1 px-2">必須</span></label>
-          <textarea id="body" class="w-full h-24 p-4 text-xs leading-none resize-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="ご自由にご記入ください" name="body"></textarea>
+          <!-- <textarea id="body" class="w-full h-24 p-4 text-xs leading-none resize-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="ご自由にご記入ください" name="body"></textarea> -->
+          <textarea id="body" class="w-full h-24 p-4 text-xs leading-none resize-none bg-blueGray-50 rounded outline-none border" type="text" placeholder="ご自由にご記入ください" name="body">abcあいうえお</textarea>
         </div>
         <div class="text-center">
             <p>送信される際は、<a href="#" class="text-blue-600 hover:underline">個人情報保護方針</a>に同意したものとします。</p>

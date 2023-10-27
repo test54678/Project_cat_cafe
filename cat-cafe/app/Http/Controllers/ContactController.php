@@ -15,6 +15,7 @@ class ContactController extends Controller
     }
 
     function sendMail(Request $request) {
+        session(['abcdefghijk' => 9]);
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'name_kana' => ['required', 'string', 'max:255', 'regex:/^[ァ-ロワンヴー]*$/u'],
