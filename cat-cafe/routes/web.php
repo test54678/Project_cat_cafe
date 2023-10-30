@@ -18,8 +18,10 @@ use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     // phpinfo();
     // exit();
+    Session::flush();
     session(['今日はいい天気' => 'あいうえお']);
     session(['abcdefghijk' => 98765432]);
+    // Session::flush();
     return view('index');
 });
 
