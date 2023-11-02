@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// namespace App\Http\Controllers;
 
+use SplFileObject;
 
 
 class CustomController extends Controller
@@ -11,7 +13,12 @@ class CustomController extends Controller
     //
     public function index()
     {
+
+        
         //
+        // $extensionDir = ini_get('extension_dir');
+        // echo $extensionDir;
+        // exit;
         // echo '今月の末日は' . date("t") . '日です';
         // echo '<br>';
         // echo '今日の曜日は「' . date("w") . '」です';
@@ -24,15 +31,30 @@ class CustomController extends Controller
         // }
         // echo '<br>';
         // echo '<br>';
+        //祝日の読み込み
+        // $file = new SplFileObject("img/syukujitsu.csv");
+        $file = new SplFileObject(public_path("config/config_doc/syukujitsu.csv"));
+
+        $file->setFlags(SplFileObject::READ_CSV);
+        $syuku_array = array();
+        foreach ($file as $line) {
+            if (isset($line[1])) {
+                $date = date("Y-m-d", strtotime($line[0]));
+                $name = $line[1];
+                $syuku_array[$date] = $name;
+            }
+        }
+
+
         ///////基本的なカレンダー/////start/////////////////////
         $week = array('日', '月', '火', '水', '木', '金', '土');
         $now_month = date("Y年n月"); //表示する年月
         $start_date = date('Y-m-01'); //開始の年月日
         $end_date = date("Y-m-t"); //終了の年月日
         $start_week = date("w", strtotime($start_date)); //開始の曜日の数字
-        $x=date("w", strtotime($end_date));
+        $x = date("w", strtotime($end_date));
         $end_week = 6 - date("w", strtotime($end_date)); //終了の曜日の数字
-        
+
         $week2 = ""; // 初期化
         $week2 .=  '<table class="cal">';
         //該当月の年月表示
@@ -72,6 +94,9 @@ class CustomController extends Controller
             } else if ($week_date == 6) {
                 //土曜日
                 $week2 .= '<td class="sat">' . $i . '</td>';
+            }else if(array_key_exists($set_date,$syuku_array)){
+                //祝日
+                $week2 .= '<td class="sun">'.$i.'</td>';
             } else {
                 //平日
                 $week2 .= '<td>' . $i . '</td>';
@@ -94,4 +119,3 @@ class CustomController extends Controller
         return view('calender', ['week2' => $week2]);
     }
 }
-

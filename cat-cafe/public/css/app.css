@@ -1,3 +1,27 @@
+table.cal {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    /* border-collapse:separate; */
+    color: #555;	
+	/* width: 100%; */
+    width: 50%;
+}
+.cal th {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px 0 10px 6px;
+    /* border-top: 1px solid #aaa; */
+    border: 1px solid #aaa;
+}
+.cal td{
+	text-align: center;
+	/* border-top: 1px solid #aaa; */
+    border: 1px solid #aaa;
+	padding: 10px 0 10px 6px;
+}
+
+
+
 .sun {
     color: red;
 /* background-color: aqua;    */
@@ -6,3 +30,17 @@
 .sat{
     color:blue;
 }
+
+
+/* tbody {
+    display: block;
+    height: 100px; 
+    overflow: auto;
+  }
+  
+  thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; 
+  } */
+  

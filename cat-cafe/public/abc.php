@@ -78,9 +78,27 @@ echo "publicサイトのファイルです";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/app.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-   <?php echo $week2; ?>
+   <!-- <?php echo $week2; ?> -->
+   <table>
+  <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+    <!-- 繰り返し -->
+    
+  </tbody>
+</table>
+
 </body>
 </html>
