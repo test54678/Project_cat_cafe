@@ -110,7 +110,10 @@ class CustomControllerGurey extends Controller
                 //日曜日
                 $week2 .= '<td class="sun ng">';
                 if ($now_date == $i) {
-                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    $week2 .= '<div class="number-circle">';
+                    $week2 .= '<span class="number">' . $i . '</span>';
+                    $week2 .= '</div>';
                 } else {
                     $week2 .= '<div class="xyz ">' . $i . '</div>';
                 }
@@ -122,7 +125,10 @@ class CustomControllerGurey extends Controller
                 //土曜日
                 $week2 .= '<td class="sat ng">';
                 if ($now_date == $i) {
-                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    $week2 .= '<div class="number-circle">';
+                    $week2 .= '<span class="number">' . $i . '</span>';
+                    $week2 .= '</div>';
                 } else {
                     $week2 .= '<div class="xyz ">' . $i . '</div>';
                 }
@@ -134,7 +140,10 @@ class CustomControllerGurey extends Controller
                 //祝日
                 $week2 .= '<td class="sun ng">';
                 if ($now_date == $i) {
-                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    $week2 .= '<div class="number-circle">';
+                    $week2 .= '<span class="number">' . $i . '</span>';
+                    $week2 .= '</div>';
                 } else {
                     $week2 .= '<div class="xyz ">' . $i . '</div>';
                 }
@@ -146,7 +155,10 @@ class CustomControllerGurey extends Controller
                 //過去日付はNG
                 $week2 .= '<td class="ng">';
                 if ($now_date == $i) {
-                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    $week2 .= '<div class="number-circle">';
+                    $week2 .= '<span class="number">' . $i . '</span>';
+                    $week2 .= '</div>';
                 } else {
                     $week2 .= '<div class="xyz ">' . $i . '</div>';
                 }
@@ -161,7 +173,10 @@ class CustomControllerGurey extends Controller
                 // $week2 .= $i . '</td>';
                 $week2 .= '<td data-date="' . $set_date . '" class="ok">';
                 if ($now_date == $i) {
-                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    $week2 .= '<div class="number-circle">';
+                    $week2 .= '<span class="number">' . $i . '</span>';
+                    $week2 .= '</div>';
                 } else {
                     $week2 .= '<div class="xyz ">' . $i . '</div>';
                 }

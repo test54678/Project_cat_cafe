@@ -56,7 +56,7 @@ table.cal {
     display: flex;
     /* display:inline-block; */
     align-items: center;
-    font-size: 13px;
+    font-size: 14px;
     background-color: rgba(127, 255, 212, 0);
     height: 24px;
     padding-left: 6px;
@@ -103,16 +103,17 @@ table.cal {
 
   .number-circle {
     position: relative;
-    width: 30px; /* 望むサイズ */
-    height: 30px;
-    background-color: #123456; /* 色を自分で選んでください */
+    width: 23px; /* 望むサイズ */
+    height: 23px;
+    background-color: #d667c07b; /* 色を自分で選んでください */
     border-radius: 50%; /* これが円形にする */
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 14px;
 }
 
 .number-circle .number {
     color: white; /* 数字の色を選択 */
-    font-size: 0.5em; /* 数字のサイズを調整 */
+    font-size: 1em; /* 数字のサイズを調整 */
 }
