@@ -100,3 +100,19 @@ table.cal {
     table-layout: fixed; 
   } */
   
+
+  .number-circle {
+    position: relative;
+    width: 30px; /* 望むサイズ */
+    height: 30px;
+    background-color: #123456; /* 色を自分で選んでください */
+    border-radius: 50%; /* これが円形にする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-circle .number {
+    color: white; /* 数字の色を選択 */
+    font-size: 0.5em; /* 数字のサイズを調整 */
+}

@@ -17,6 +17,12 @@
     
     <input type="text" name="get_date" value="">
     
+</br>
+<div class="number-circle">
+    <span class="number">30</span> <!-- ここに表示したい数字を入れてください -->
+</div>
+
+
     {{-- <script>
         $(".ok").click(function(){
             let get_date = $(this).data("date");

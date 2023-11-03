@@ -95,12 +95,12 @@ class CustomControllerGurey extends Controller
             $week2 .= '<td class="kuuhaku"></td>';
         }
 
-        $yyy ="🌞";
-        $zzz ="🕛";
-        $xxx ="🌛";
-        // $yyy = "";
-        // $zzz = "";
-        // $xxx = "";
+        // $yyy ="🌞";
+        // $zzz ="🕛";
+        // $xxx ="🌛";
+        $yyy = "";
+        $zzz = "";
+        $xxx = "";
         //1日～月末までの日付繰り返し
         for ($i = 1; $i <= date("t"); $i++) {
             $set_date = date("Y-m", strtotime($start_date)) . '-' . sprintf("%02d", $i);
@@ -183,6 +183,7 @@ class CustomControllerGurey extends Controller
 
         $week2 .= '</tr>';
         $week2 .= '</table>';
+        
         ///////基本的なカレンダー/////end/////////////////////
         // exit;
         return view('calender', ['week2' => $week2]);
