@@ -18,9 +18,20 @@ table.cal {
 	/* border-top: 1px solid #aaa; */
     border: 1px solid #aaa;
 	padding: 10px 0 10px 6px;
+    height: 50px;
 }
 
+.ok {
 
+}
+
+.ok:hover{
+    background-color: gold;
+}
+
+.ng {
+    background-color: #aaaaaa4a;
+}
 
 .sun {
     color: red;
@@ -32,6 +43,21 @@ table.cal {
 }
 
 
+.xyz{
+    background-color: aquamarine;
+}
+
+.yyy{
+    background-color:rgb(240, 136, 218)
+}
+
+.zzz{
+    background-color:rgb(236, 240, 136)
+}
+
+.xxx{
+    background-color: cornflowerblue;
+}
 /* tbody {
     display: block;
     height: 100px; 

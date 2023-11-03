@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContactController;
 
-use App\Http\Controllers\CustomController;
+use App\Http\Controllers\CustomControllerGurey;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +37,4 @@ Route::get('/admin/blogs',[AdminBlogController::class, 'index']);
 Route::get('/admin/blogs/create',[AdminBlogController::class, 'create']);
 
 Route::get('/ab',[CustomController::class, 'index']);
+Route::get('/abc',[CustomControllerGurey::class, 'index']);
