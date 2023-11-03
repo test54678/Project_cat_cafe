@@ -14,7 +14,7 @@ class CustomControllerGurey extends Controller
     public function index()
     {
 
-        
+
         //
         // $extensionDir = ini_get('extension_dir');
         // echo $extensionDir;
@@ -56,7 +56,7 @@ class CustomControllerGurey extends Controller
         $now_date = date("d");  //03と表示されてしまう
         // $now_date = 07;
         $now_date = sprintf("%01d", $now_date);
-        
+
         //▼カレンダーの見出しの年月用
         $now_month = date("Y年n月");
 
@@ -92,10 +92,15 @@ class CustomControllerGurey extends Controller
         $week2 .= '<tr>';
         //開始曜日まで日付を進める
         for ($i = 0; $i < $start_week; $i++) {
-            $week2 .= '<td></td>';
+            $week2 .= '<td class="kuuhaku"></td>';
         }
 
-
+        $yyy ="🌞";
+        $zzz ="🕛";
+        $xxx ="🌛";
+        // $yyy = "";
+        // $zzz = "";
+        // $xxx = "";
         //1日～月末までの日付繰り返し
         for ($i = 1; $i <= date("t"); $i++) {
             $set_date = date("Y-m", strtotime($start_date)) . '-' . sprintf("%02d", $i);
@@ -103,26 +108,66 @@ class CustomControllerGurey extends Controller
             //土日で色を変える
             if ($week_date == 0) {
                 //日曜日
-                $week2 .= '<td class="sun ng">' . $i . '</td>';
+                $week2 .= '<td class="sun ng">';
+                if ($now_date == $i) {
+                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                } else {
+                    $week2 .= '<div class="xyz ">' . $i . '</div>';
+                }
+                $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                $week2 .= '</td>';
             } else if ($week_date == 6) {
                 //土曜日
-                $week2 .= '<td class="sat ng">' . $i . '</td>';
-            }else if(array_key_exists($set_date,$syuku_array)){
+                $week2 .= '<td class="sat ng">';
+                if ($now_date == $i) {
+                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                } else {
+                    $week2 .= '<div class="xyz ">' . $i . '</div>';
+                }
+                $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                $week2 .= '</td>';
+            } else if (array_key_exists($set_date, $syuku_array)) {
                 //祝日
-                $week2 .= '<td class="sun ng">'.$i.'</td>';
-            }else if($i < $now_date){
+                $week2 .= '<td class="sun ng">';
+                if ($now_date == $i) {
+                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                } else {
+                    $week2 .= '<div class="xyz ">' . $i . '</div>';
+                }
+                $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                $week2 .= '</td>';
+            } else if ($i < $now_date) {
                 //過去日付はNG
-                $week2 .= '<td class="ng">'.$i.'</td>';             
-            }else {
+                $week2 .= '<td class="ng">';
+                if ($now_date == $i) {
+                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                } else {
+                    $week2 .= '<div class="xyz ">' . $i . '</div>';
+                }
+                $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                $week2 .= '</td>';
+            } else {
                 //平日
                 // $week2 .= '<td data-date="'.$set_date.'" class="ok">';
                 // $week2 .= '<div class="xyz">あ</div>';
                 // $week2 .= $i . '</td>';
-                $week2 .= '<td data-date="'.$set_date.'" class="ok">';
-                $week2 .= '<div class="xyz">'.$i.'</div>';
-                $week2 .= '<div class="yyy">'.$i.'</div>';
-                $week2 .= '<div class="zzz">'.$i.'</div>';
-                $week2 .= '<div class="xxx">'.$i.'</div>';
+                $week2 .= '<td data-date="' . $set_date . '" class="ok">';
+                if ($now_date == $i) {
+                    $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                } else {
+                    $week2 .= '<div class="xyz ">' . $i . '</div>';
+                }
+                $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                $week2 .= '<div class="xxx">' . $xxx . '</div>';
                 $week2 .= '</td>';
             }
             if ($week_date == 6) {
@@ -133,7 +178,7 @@ class CustomControllerGurey extends Controller
 
         //末日の余りを空白で埋める
         for ($i = 0; $i < $end_week; $i++) {
-            $week2 .= '<td></td>';
+            $week2 .= '<td class="kuuhaku"></td>';
         }
 
         $week2 .= '</tr>';

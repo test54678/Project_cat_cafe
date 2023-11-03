@@ -3,8 +3,10 @@ table.cal {
     border-collapse: collapse;
     /* border-collapse:separate; */
     color: #555;	
-	/* width: 100%; */
-    width: 50%;
+	width: 100%;
+    /* width: 50%; */
+    max-width: 600px;
+    min-width: 400px;
 }
 .cal th {
     background-color: #f5f5f5;
@@ -17,9 +19,15 @@ table.cal {
 	text-align: center;
 	/* border-top: 1px solid #aaa; */
     border: 1px solid #aaa;
-	padding: 10px 0 10px 6px;
+	/* padding: 10px 0 10px 6px; */
     height: 50px;
 }
+
+.kuuhaku{
+    background-color: #aaaaaa4a;
+}
+
+
 
 .ok {
 
@@ -44,20 +52,42 @@ table.cal {
 
 
 .xyz{
-    background-color: aquamarine;
+    /* width:fit-content; */
+    display: flex;
+    /* display:inline-block; */
+    align-items: center;
+    font-size: 13px;
+    background-color: rgba(127, 255, 212, 0);
+    height: 24px;
+    padding-left: 6px;
+    /* text-align: left; */
+    /* width: 49.163px; */
 }
 
 .yyy{
-    background-color:rgb(240, 136, 218)
+    background-color:rgba(240, 136, 217, 0);
+    height: 24px;
 }
 
 .zzz{
-    background-color:rgb(236, 240, 136)
+    background-color:rgba(236, 240, 136, 0);
+    height: 24px;
 }
 
 .xxx{
-    background-color: cornflowerblue;
+    background-color: rgba(100, 148, 237, 0);
+    height: 24px;
 }
+
+.today_mark{
+   background-color: rgba(245, 122, 237, 0.227);
+   width: 22px;
+   border-radius: 43%; 
+}
+
+
+
+
 /* tbody {
     display: block;
     height: 100px; 
