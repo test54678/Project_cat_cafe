@@ -95,12 +95,12 @@ class CustomControllerGurey extends Controller
             $week2 .= '<td class="kuuhaku"></td>';
         }
 
-        // $yyy ="🌞";
-        // $zzz ="🕛";
-        // $xxx ="🌛";
-        $yyy = "";
-        $zzz = "";
-        $xxx = "";
+        $yyy ="🌞";
+        $zzz ="🕛";
+        $xxx ="🌛";
+        // $yyy = "";
+        // $zzz = "";
+        // $xxx = "";
         //1日～月末までの日付繰り返し
         for ($i = 1; $i <= date("t"); $i++) {
             $set_date = date("Y-m", strtotime($start_date)) . '-' . sprintf("%02d", $i);
@@ -154,14 +154,14 @@ class CustomControllerGurey extends Controller
             } else if ($i < $now_date) {
                 //過去日付はNG
                 $week2 .= '<td class="ng">';
-                // if ($now_date == $i) {
-                //     // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
-                //     $week2 .= '<div class="number-circle">';
-                //     $week2 .= '<span class="number">' . $i . '</span>';
-                //     $week2 .= '</div>';
-                // } else {
-                //     $week2 .= '<div class="xyz ">' . $i . '</div>';
-                // }
+                if ($now_date == $i) {
+                    // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                    $week2 .= '<div class="number-circle">';
+                    $week2 .= '<span class="number">' . $i . '</span>';
+                    $week2 .= '</div>';
+                } else {
+                    $week2 .= '<div class="xyz ">' . $i . '</div>';
+                }
                 $week2 .= '<div class="yyy">' . $yyy . '</div>';
                 $week2 .= '<div class="zzz">' . $zzz . '</div>';
                 $week2 .= '<div class="xxx">' . $xxx . '</div>';
