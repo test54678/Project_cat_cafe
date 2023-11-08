@@ -33,6 +33,9 @@ class CustomControllerGurey extends Controller
         // echo '<br>';
         //祝日の読み込み
         // $file = new SplFileObject("img/syukujitsu.csv");
+        
+
+
         $file = new SplFileObject(public_path("config/config_doc/syukujitsu.csv"));
 
         $file->setFlags(SplFileObject::READ_CSV);
@@ -69,6 +72,9 @@ class CustomControllerGurey extends Controller
         $end_week = 6 - date("w", strtotime($end_date)); //終了の曜日の数字
 
         $week2 = ""; // 初期化
+
+        $week2 .=   '<div class="cal_disp">';
+
         $week2 .=  '<table class="cal">';
         //該当月の年月表示
         $week2 .= '<tr>';

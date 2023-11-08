@@ -7,6 +7,10 @@ use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\CustomControllerGurey;
 
+use App\Http\Controllers\CustomControllerGureyMultiMonth;
+
+use App\Http\Controllers\CustomControllerGureyMultiMonthSeijou;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +42,7 @@ Route::get('/admin/blogs/create',[AdminBlogController::class, 'create']);
 
 Route::get('/ab',[CustomController::class, 'index']);
 Route::get('/abc',[CustomControllerGurey::class, 'index']);
+
+Route::get('/abcd',[CustomControllerGureyMultiMonth::class, 'index']);
+
+Route::get('/abcde',[CustomControllerGureyMultiMonthSeijou::class, 'index']);

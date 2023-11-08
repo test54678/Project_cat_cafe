@@ -10,7 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- jQueryを読み込む -->
     {{-- <script src="{{ asset('js/calender.js') }}"></script> --}}
-    <title>シングルカレンダー</title>
+    <title>マルチカレンダー</title>
 </head>
 <body>
     {!! $week2 !!}
