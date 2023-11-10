@@ -17,7 +17,7 @@ class CustomControllerGureyMultiMonth extends Controller
         // $aaa = custom_function(1,2);
         // echo $aaa;
         // exit;
-
+        echo "マルチ";
         $week2 = ""; // 初期化
 
         $week2 .= '<div class="cal_disp">';
@@ -50,7 +50,14 @@ class CustomControllerGureyMultiMonth extends Controller
             $start_week = date("w", strtotime($now_date.'-01'));
             
             //▼jQueryで制御するためユニークなクラスをつける
-            $week2 .= '<div class="set_cal'.$x.'">';
+            // $week2 .= '<div class="set_cal'.$x.'">';
+            if($x==0){
+                $week2 .='<div class="set_cal'.$x.'">';
+            }
+            else{
+                // $week2 .='<div class="set_cal'.$x.' style="display: none;"">';
+                $week2 .= '<div class="set_cal' . $x . '" style="display: none;">';
+            }
             $week2 .= '<table class="cal">';
             //該当月の年月表示
             $week2 .= '<tr>';

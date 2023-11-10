@@ -14,7 +14,6 @@ class CustomControllerGureyMultiMonthSeijou extends Controller
     public function index()
     {
 echo "Seijou";
-echo "<br>";
         $week2 ="";
         $week2 .='<div class="cal_disp">';
         //祝日の読み込み
@@ -29,19 +28,7 @@ echo "<br>";
             }
         }
          
-        $week = array('日','月','火','水','木','金','土');
-        
-        $now_date_hizuke = date("Y-m-d");  //03と表示されてしまう
-        // $now_date_hizuke = date("d");  //03と表示されてしまう
-        // $now_date = 07;
-        // echo "$now_date_hizuke";
-        // echo "<br>";
-        // $now_date_hizuke = sprintf("%01d", $now_date_hizuke);
-        
-        echo "$now_date_hizuke";
-        echo "<br>";
-        // exit;
-
+        $week = array('日','月','火','水','木','金','土');	
         $get_date = date("Y-m");	
         //3ヵ月分なので3回繰り返し
         for($x=0; $x<3; $x++){
@@ -111,127 +98,102 @@ echo "<br>";
 
 
             //1日～月末までの日付繰り返し
-            // $now_date_ymd = strtotime(date("ymd"));
-
-            // date_default_timezone_set('Asia/Tokyo');
-            // $dateInJapan = date("Y-m-d H:i:s", $now_date_ymd);
-
-            // echo $dateInJapan;
-            // echo "<br>";
-
-            //menjou 追加
-            $set_date = date("Y-m-d");
-            $now_date_ymd = strtotime($set_date);            
-
+            $now_date_ymd = strtotime(date("ymd"));
             for($i=1; $i<=$end_day; $i++){		
                 $set_date = date("Y-m",strtotime($now_date)).'-'.sprintf("%02d",$i);
                 $week_date = date("w", strtotime($set_date));
                 $set_date_ymd = strtotime($set_date);
          
-                //iから本日の日の部分を置換する
-                // $i = 1;
-                $currentYearAndMonth = date("Y-m");
-                $customDate = $currentYearAndMonth . '-' . str_pad($i, 2, "0", STR_PAD_LEFT);
-
-                // echo $customDate;
-                // exit;
-
                 //土日で色を変える
                 if($week_date == 0){
                     //日曜日
                     // $week2 .='<td class="sun ng">'.$i.'</td>';
                     $week2 .= '<td class="sun ng">';
-                    // $week2 .= custom_function($now_date_hizuke,$i,$yyy,$zzz,$xxx);
-                    $week2 .= custom_function($now_date_hizuke,$customDate,$yyy,$zzz,$xxx);
-                    // if ($now_date == $i) {
-                    //     // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
-                    //     $week2 .= '<div class="number-circle">';
-                    //     $week2 .= '<span class="number">' . $i . '</span>';
-                    //     $week2 .= '</div>';
-                    // } else {
-                    //     $week2 .= '<div class="xyz ">' . $i . '</div>';
-                    // }
-                    // $week2 .= '<div class="yyy">' . $yyy . '</div>';
-                    // $week2 .= '<div class="zzz">' . $zzz . '</div>';
-                    // $week2 .= '<div class="xxx">' . $xxx . '</div>';
-                    // $week2 .= '</td>';
+                    // $week2 .= custom_function($now_date,$i,$yyy,$zzz,$xxx);
+                    if ($now_date == $i) {
+                        // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                        $week2 .= '<div class="number-circle">';
+                        $week2 .= '<span class="number">' . $i . '</span>';
+                        $week2 .= '</div>';
+                    } else {
+                        $week2 .= '<div class="xyz ">' . $i . '</div>';
+                    }
+                    $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                    $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                    $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                    $week2 .= '</td>';
             
                 }else if($week_date == 6){
                     //土曜日
                     // $week2 .='<td class="sat ng">'.$i.'</td>';
                     $week2 .= '<td class="sat ng">';
-                    // $week2 .= custom_function($now_date_hizuke,$i,$yyy,$zzz,$xxx);
-                    $week2 .= custom_function($now_date_hizuke,$customDate,$yyy,$zzz,$xxx);
-                    // if ($now_date == $i) {
-                    //     // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
-                    //     $week2 .= '<div class="number-circle">';
-                    //     $week2 .= '<span class="number">' . $i . '</span>';
-                    //     $week2 .= '</div>';
-                    // } else {
-                    //     $week2 .= '<div class="xyz ">' . $i . '</div>';
-                    // }
-                    // $week2 .= '<div class="yyy">' . $yyy . '</div>';
-                    // $week2 .= '<div class="zzz">' . $zzz . '</div>';
-                    // $week2 .= '<div class="xxx">' . $xxx . '</div>';
-                    // $week2 .= '</td>';
+                    // $week2 .= custom_function($now_date,$i,$yyy,$zzz,$xxx);
+                    if ($now_date == $i) {
+                        // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                        $week2 .= '<div class="number-circle">';
+                        $week2 .= '<span class="number">' . $i . '</span>';
+                        $week2 .= '</div>';
+                    } else {
+                        $week2 .= '<div class="xyz ">' . $i . '</div>';
+                    }
+                    $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                    $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                    $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                    $week2 .= '</td>';
             
                 }else if(array_key_exists($set_date,$syuku_array)){
                     //祝日
                     // $week2 .='<td class="sun ng">'.$i.'</td>';
                     $week2 .= '<td class="sun ng">';
-                    // $week2 .= custom_function($now_date_hizuke,$i,$yyy,$zzz,$xxx);
-                    $week2 .= custom_function($now_date_hizuke,$customDate,$yyy,$zzz,$xxx);
-                    // if ($now_date == $i) {
-                    //     // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
-                    //     $week2 .= '<div class="number-circle">';
-                    //     $week2 .= '<span class="number">' . $i . '</span>';
-                    //     $week2 .= '</div>';
-                    // } else {
-                    //     $week2 .= '<div class="xyz ">' . $i . '</div>';
-                    // }
-                    // $week2 .= '<div class="yyy">' . $yyy . '</div>';
-                    // $week2 .= '<div class="zzz">' . $zzz . '</div>';
-                    // $week2 .= '<div class="xxx">' . $xxx . '</div>';
-                    // $week2 .= '</td>';
+                    // $week2 .= custom_function($now_date,$i,$yyy,$zzz,$xxx);
+                    if ($now_date == $i) {
+                        // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                        $week2 .= '<div class="number-circle">';
+                        $week2 .= '<span class="number">' . $i . '</span>';
+                        $week2 .= '</div>';
+                    } else {
+                        $week2 .= '<div class="xyz ">' . $i . '</div>';
+                    }
+                    $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                    $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                    $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                    $week2 .= '</td>';
             
-                }else if($now_date_ymd > $set_date_ymd){
+                }else if($now_date_ymd >= $set_date_ymd){
                     //過去日付はNG
                     // $week2 .='<td class="ng">'.$i.'</td>';
                     $week2 .= '<td class="ng">';
-                    // $week2 .= custom_function($now_date_hizuke,$i,$yyy,$zzz,$xxx);
-                    $week2 .= custom_function($now_date_hizuke,$customDate,$yyy,$zzz,$xxx);
-
-                    // if ($now_date == $i) {
-                    //     // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
-                    //     $week2 .= '<div class="number-circle">';
-                    //     $week2 .= '<span class="number">' . $i . '</span>';
-                    //     $week2 .= '</div>';
-                    // } else {
-                    //     $week2 .= '<div class="xyz ">' . $i . '</div>';
-                    // }
-                    // $week2 .= '<div class="yyy">' . $yyy . '</div>';
-                    // $week2 .= '<div class="zzz">' . $zzz . '</div>';
-                    // $week2 .= '<div class="xxx">' . $xxx . '</div>';
-                    // $week2 .= '</td>';
+                    // $week2 .= custom_function($now_date,$i,$yyy,$zzz,$xxx);
+                    if ($now_date == $i) {
+                        // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                        $week2 .= '<div class="number-circle">';
+                        $week2 .= '<span class="number">' . $i . '</span>';
+                        $week2 .= '</div>';
+                    } else {
+                        $week2 .= '<div class="xyz ">' . $i . '</div>';
+                    }
+                    $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                    $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                    $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                    $week2 .= '</td>';
             
                 }else{
                     //平日
                     // $week2 .='<td data-date="'.$set_date.'" class="ok">'.$i.'</td>';
                     $week2 .= '<td data-date="'.$set_date.'" class="ok">';
-                    // $week2 .= custom_function($now_date_hizuke,$i,$yyy,$zzz,$xxx);
-                    $week2 .= custom_function($now_date_hizuke,$customDate,$yyy,$zzz,$xxx);
-                    // if ($now_date == $i) {
-                    //     // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
-                    //     $week2 .= '<div class="number-circle">';
-                    //     $week2 .= '<span class="number">' . $i . '</span>';
-                    //     $week2 .= '</div>';
-                    // } else {
-                    //     $week2 .= '<div class="xyz ">' . $i . '</div>';
-                    // }
-                    // $week2 .= '<div class="yyy">' . $yyy . '</div>';
-                    // $week2 .= '<div class="zzz">' . $zzz . '</div>';
-                    // $week2 .= '<div class="xxx">' . $xxx . '</div>';
-                    // $week2 .= '</td>';
+                    // $week2 .= custom_function($now_date,$i,$yyy,$zzz,$xxx);
+                    if ($now_date == $i) {
+                        // $week2 .= '<div class="xyz today_mark">' . $i . '</div>';
+                        $week2 .= '<div class="number-circle">';
+                        $week2 .= '<span class="number">' . $i . '</span>';
+                        $week2 .= '</div>';
+                    } else {
+                        $week2 .= '<div class="xyz ">' . $i . '</div>';
+                    }
+                    $week2 .= '<div class="yyy">' . $yyy . '</div>';
+                    $week2 .= '<div class="zzz">' . $zzz . '</div>';
+                    $week2 .= '<div class="xxx">' . $xxx . '</div>';
+                    $week2 .= '</td>';
             
                 }	
                 if($week_date == 6){

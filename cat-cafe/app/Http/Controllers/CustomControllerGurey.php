@@ -13,7 +13,7 @@ class CustomControllerGurey extends Controller
     //
     public function index()
     {
-
+        echo "本日にマークがついている。CustomControllerGurey";
 
         //
         // $extensionDir = ini_get('extension_dir');

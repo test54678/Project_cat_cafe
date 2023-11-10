@@ -45,4 +45,4 @@ Route::get('/abc',[CustomControllerGurey::class, 'index']);
 
 Route::get('/abcd',[CustomControllerGureyMultiMonth::class, 'index']);
 
-Route::get('/abcde',[CustomControllerGureyMultiMonthSeijou::class, 'index']);
+Route::get('/s',[CustomControllerGureyMultiMonthSeijou::class, 'index']);

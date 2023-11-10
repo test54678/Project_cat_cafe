@@ -119,3 +119,10 @@ table.cal {
     color: white; /* 数字の色を選択 */
     font-size: 1em; /* 数字のサイズを調整 */
 }
+
+.slide {
+    position: absolute;
+    left: -500px; /* 初期位置を左端より大きく負に設定 */
+    transition: left 2s; /* 左方向への移動を2秒間で行う */
+  }
+  
