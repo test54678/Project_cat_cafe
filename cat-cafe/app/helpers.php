@@ -6,9 +6,6 @@ if (! function_exists('custom_function')) {
     // function custom_function($now_date,$i,$yyy,$zzz,$xxx)
     function custom_function($now_date_hizuke,$i,$yyy,$zzz,$xxx)
     {
-        // $z = $x + $y;
-        // return $z; 
-        // 実装内容
         $day = date('d', strtotime($i));
         $day = ltrim($day, '0');
 

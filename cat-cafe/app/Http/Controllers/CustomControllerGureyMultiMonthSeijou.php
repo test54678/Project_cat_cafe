@@ -17,7 +17,9 @@ echo "Seijou";
 echo "<br>";
         $week2 ="";
         $week2 .='<div class="cal_disp">';
-        //祝日の読み込み
+        //////////////////////
+        /////祝日の読み込み//////
+        //////////////////////
         $file = new SplFileObject(public_path("config/config_doc/syukujitsu.csv")); 
         $file->setFlags(SplFileObject::READ_CSV); 	
         $syuku_array = array();
@@ -33,13 +35,14 @@ echo "<br>";
         
         $now_date_hizuke = date("Y-m-d");  //03と表示されてしまう
         
-        echo "$now_date_hizuke";
-        echo "<br>";
+        // echo "$now_date_hizuke";
+        // echo "<br>";
         // exit;
 
-        $get_date = date("Y-m");	
+        // $get_date = date("Y-m");
+        $get_date = date("Y-m", strtotime("last month")); //現在の月から前月を計算する
         //3ヵ月分なので3回繰り返し
-        for($x=0; $x<3; $x++){
+        for($x=0; $x<5; $x++){//月数を増やす
             //▼年月に-1を付けて月初を生成
             $tt = $get_date.'-1';
             //▼現在の日付を起点にfor文の該当月を生成
@@ -52,7 +55,7 @@ echo "<br>";
             $start_week = date("w", strtotime($now_date.'-01'));
             
             //▼jQueryで制御するためユニークなクラスをつける
-            if($x==0){
+            if($x==1){//ここで最初に表示させたい年月を制御する。
                 $week2 .='<div class="set_cal'.$x.'">';
             }
             else{
@@ -60,23 +63,30 @@ echo "<br>";
                 $week2 .= '<div class="set_cal' . $x . '" style="display: none;">';
             }
             $week2 .='<table class="cal">';
-            ////////////////////////
-            /////該当月の年月表示//////
-            ////////////////////////
+            ////////////////////////////////////////////////
+            /////該当月の年月表示//////////////////////////////
+            ////////////////////////////////////////////////
             $week2 .='<tr>';
+
+            /////////////////
+            //◀︎前月に戻す制御//
+            ////////////////
             if($x != 0){
                 $set_x = $x -1;
-                //▼前月に戻す
-                $week2 .='<td class="pre" data-pre="'.$set_x.'">↑</td>';
+                
+                $week2 .='<td class="pre" data-pre="'.$set_x.'">◀︎</td>';
             }else{
                 $week2 .='<td></td>';
             }
             $week2 .='<td colspan="5" class="center">'.date("Y年n月",strtotime($now_date)).'</td>';
             
-            if($x != 2){
+            //////////////////
+            //次月にすすむ制御▶︎//
+            /////////////////
+            if($x != 4){ 
                 $set_n = $x +1;
-                //▼次月にすすむ
-                $week2 .='<td class="next" data-next="'.$set_n.'">↓</td>';
+                
+                $week2 .='<td class="next" data-next="'.$set_n.'">▶︎</td>';
             }else{
                 $week2 .='<td></td>';
             }
@@ -110,7 +120,7 @@ echo "<br>";
 
             //現在の日付、menjou 追加
             $now_date3 = date("Y-m-d");
-            $now_date_ymd = strtotime($now_date3);            
+            $now_date_ymd = strtotime($now_date3); //strtotimeにする           
 
             for($i=1; $i<=$end_day; $i++){		
                 $set_date = date("Y-m",strtotime($now_date)).'-'.sprintf("%02d",$i);
@@ -119,8 +129,8 @@ echo "<br>";
          
                 //iから本日の日の部分を置換する
                 // $i = 1;
-                $currentYearAndMonth = date("Y-m");
-                $customDate = $currentYearAndMonth . '-' . str_pad($i, 2, "0", STR_PAD_LEFT);
+                // $currentYearAndMonth = date("Y-m");
+                // $customDate = $currentYearAndMonth . '-' . str_pad($i, 2, "0", STR_PAD_LEFT);
 
                 // echo $customDate;
                 // exit;
