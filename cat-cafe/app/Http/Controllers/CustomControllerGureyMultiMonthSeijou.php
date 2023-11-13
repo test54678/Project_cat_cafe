@@ -13,10 +13,20 @@ class CustomControllerGureyMultiMonthSeijou extends Controller
     //
     public function index()
     {
+
+// 月数を設定するパラメータ
+
 echo "Seijou";
 echo "<br>";
         $week2 ="";
         $week2 .='<div class="cal_disp">';
+
+        //////設定値///////////
+        $PastCount = -2; //現在の月から前月を計算する
+        $MonthCount = 14; //月数
+        $MonthFirst = 2; //最初に表示させたい年月
+        $Next = 13; //次に進む制御
+
         //////////////////////
         /////祝日の読み込み//////
         //////////////////////
@@ -40,9 +50,10 @@ echo "<br>";
         // exit;
 
         // $get_date = date("Y-m");
-        $get_date = date("Y-m", strtotime("last month")); //現在の月から前月を計算する
+        // $get_date = date("Y-m", strtotime("last month")); //現在の月から前月を計算する
+        $get_date = date("Y-m", strtotime("$PastCount month")); //現在の月から前月を計算する
         //3ヵ月分なので3回繰り返し
-        for($x=0; $x<5; $x++){//月数を増やす
+        for($x=0; $x<$MonthCount; $x++){//月数を増やす
             //▼年月に-1を付けて月初を生成
             $tt = $get_date.'-1';
             //▼現在の日付を起点にfor文の該当月を生成
@@ -55,7 +66,7 @@ echo "<br>";
             $start_week = date("w", strtotime($now_date.'-01'));
             
             //▼jQueryで制御するためユニークなクラスをつける
-            if($x==1){//ここで最初に表示させたい年月を制御する。
+            if($x==$MonthFirst){//ここで最初に表示させたい年月を制御
                 $week2 .='<div class="set_cal'.$x.'">';
             }
             else{
@@ -83,7 +94,7 @@ echo "<br>";
             //////////////////
             //次月にすすむ制御▶︎//
             /////////////////
-            if($x != 4){ 
+            if($x != $Next){ 
                 $set_n = $x +1;
                 
                 $week2 .='<td class="next" data-next="'.$set_n.'">▶︎</td>';
