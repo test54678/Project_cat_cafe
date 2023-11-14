@@ -10,14 +10,15 @@ $(".pre").click(function(){
 	let pre = $(this).data("pre");
 	$(".cal_disp > div").hide();
 	// $(".cal_disp .set_cal" + pre).fadeIn();
-	$(".cal_disp .set_cal" + pre).fadeIn();
+	$(".cal_disp .set_cal" + pre).show();
 });
 
 $(".next").click(function(){
 	let next = $(this).data("next");
 	$(".cal_disp > div").hide();
 	// $(".cal_disp .set_cal" + next).fadeIn();
-	$(".cal_disp .set_cal" + next).fadeIn();
+	// $(".cal_disp .set_cal" + next).fadeIn();
+	$(".cal_disp .set_cal" + next).show();
 	console.log(next);
 });	
 	
