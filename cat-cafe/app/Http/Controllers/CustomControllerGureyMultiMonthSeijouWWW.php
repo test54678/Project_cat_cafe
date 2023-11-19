@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use SplFileObject;
 
 
-class CustomControllerGureyMultiMonthSeijou extends Controller
+class CustomControllerGureyMultiMonthSeijouWWW extends Controller
 {
     //
     public function index()
@@ -16,7 +16,7 @@ class CustomControllerGureyMultiMonthSeijou extends Controller
 
 // 月数を設定するパラメータ
 
-echo "Seijou";
+echo "SeijouWWW";
 echo "<br>";
         $week2 ="";
         $week2 .='<div class="cal_disp">';
@@ -210,7 +210,7 @@ echo "<br>";
          
         $week2 .='</div>';
 
-        return view('calender', ['week2' => $week2]);
+        return view('calenderWWW', ['week2' => $week2]);
     }
 
 }

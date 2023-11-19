@@ -1,0 +1,25 @@
+$(".next").click(function(){
+	let next = $(this).data("next");
+// Get current visible element's position
+var currPos = $(".cal_disp > div:visible").position().left;
+
+// Hide all divs
+$(".cal_disp > div").hide();
+
+// Show the next div
+$(".cal_disp .set_cal" + next).show();
+
+// Get next element's position
+var nextPos = $(".cal_disp .set_cal" + next).position().left;
+
+// Calculate scroll distance
+var scrollDistance = nextPos - currPos;
+
+// Animate the scroll
+$(".cal_disp").animate({scrollLeft: "+=" + scrollDistance}, 50);
+	console.log(next);
+});
+
+
+
+/Users/menjoueisaku/Desktop/Project_cat_cafe/cat-cafe/public/a.php

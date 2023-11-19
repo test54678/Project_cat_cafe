@@ -11,6 +11,8 @@ use App\Http\Controllers\CustomControllerGureyMultiMonth;
 
 use App\Http\Controllers\CustomControllerGureyMultiMonthSeijou;
 
+use App\Http\Controllers\CustomControllerGureyMultiMonthSeijouWWW;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +48,5 @@ Route::get('/abc',[CustomControllerGurey::class, 'index']);
 Route::get('/abcd',[CustomControllerGureyMultiMonth::class, 'index']);
 
 Route::get('/s',[CustomControllerGureyMultiMonthSeijou::class, 'index']);
+
+Route::get('/w',[CustomControllerGureyMultiMonthSeijouWWW::class, 'index']);

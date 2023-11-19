@@ -87,7 +87,10 @@ table.cal {
    border-radius: 43%; 
 }
 
-
+/* カレンダーを横に並べる方法 */
+.cal_disp{
+    /* display: flex; */
+}
 
 
 /* tbody {
@@ -125,4 +128,8 @@ table.cal {
     left: -500px; /* 初期位置を左端より大きく負に設定 */
     transition: left 2s; /* 左方向への移動を2秒間で行う */
   }
-  
+
+
+  /* .hover-bg-color {
+    background-color:aqua !important;
+} */
