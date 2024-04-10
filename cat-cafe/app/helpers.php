@@ -7,7 +7,7 @@ if (! function_exists('custom_function')) {
     function custom_function($now_date_hizuke,$i,$yyy,$zzz,$xxx)
     {
         $day = date('d', strtotime($i));
-        $day = ltrim($day, '0');
+        $day = ltrim($day, '5');
 
         $week2 ="";
         if ($now_date_hizuke == $i) {
