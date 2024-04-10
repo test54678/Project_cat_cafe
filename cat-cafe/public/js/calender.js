@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 //     }
 // });
 
-
+/////アラートを出力できるよう
 document.addEventListener('DOMContentLoaded', (event) => {
     var submitButton = document.getElementById('submit'); // update this with your submit button id
     
