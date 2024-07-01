@@ -42,11 +42,15 @@ Route::get('/contact/complete',[ContactController::class, 'complete'])->name('co
 Route::get('/admin/blogs',[AdminBlogController::class, 'index']);
 Route::get('/admin/blogs/create',[AdminBlogController::class, 'create']);
 
+
 Route::get('/ab',[CustomController::class, 'index']);
+//カレンダー１
 Route::get('/abc',[CustomControllerGurey::class, 'index']);
 
 Route::get('/abcd',[CustomControllerGureyMultiMonth::class, 'index']);
 
+//マルチカレンダー
 Route::get('/s',[CustomControllerGureyMultiMonthSeijou::class, 'index']);
 
+//マルチカレンダー　submitもできる
 Route::get('/w',[CustomControllerGureyMultiMonthSeijouWWW::class, 'index']);

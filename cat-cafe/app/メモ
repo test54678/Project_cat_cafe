@@ -23,3 +23,13 @@ $(".cal_disp").animate({scrollLeft: "+=" + scrollDistance}, 50);
 
 
 /Users/menjoueisaku/Desktop/Project_cat_cafe/cat-cafe/public/a.php
+
+
+localhost:80
+
+
+http://localhost/abc
+
+http://localhost/abcd
+
+http://localhost/s
